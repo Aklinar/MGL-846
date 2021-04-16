@@ -1,4 +1,4 @@
-package Employee;
+package main.java.Employee;
 
 import java.awt.*;
 import javax.swing.*;
@@ -50,7 +50,7 @@ class print_data implements ActionListener{
         id9=new JLabel();
         id9.setBounds(0,0,595,642);
         id9.setLayout(null);
-        ImageIcon img=new ImageIcon(ClassLoader.getSystemResource("icon/print.jpg"));
+        ImageIcon img=new ImageIcon(ClassLoader.getSystemResource("./main/java/icon/print.jpg"));
         id9.setIcon(img);
 
         id8 = new JLabel("Employee Details");

@@ -1,4 +1,4 @@
-package Employee;
+package main.java.Employee;
 
 /*
 CLASS Creation Steps:

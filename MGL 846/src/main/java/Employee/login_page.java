@@ -1,4 +1,4 @@
-package Employee;
+package main.java.Employee;
 
 import java.awt.*;
 import javax.swing.*;
@@ -40,7 +40,7 @@ class login_page implements ActionListener {
 		t2.setBounds(150,70,150,30);
 		frame.add(t2);
 		
-		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/login.png"));
+		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("./main/java/icon/login.png"));
 		Image i2 = i1.getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT); // resize our image size.
 		ImageIcon i3 = new ImageIcon(i2);  // convert image into imageicon
 		JLabel l3 =  new JLabel(i3); // set imageicon on label

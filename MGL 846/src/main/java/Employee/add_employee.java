@@ -1,4 +1,4 @@
-package Employee;
+package main.java.Employee;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -23,7 +23,7 @@ public class add_employee implements ActionListener {
         box = new JLabel();
         box.setBounds(0,0,900,700);
         box.setLayout(null);
-        ImageIcon img = new ImageIcon(ClassLoader.getSystemResource("icon/add.jpg"));
+        ImageIcon img = new ImageIcon(ClassLoader.getSystemResource("./main/java/icon/add.jpg"));
         box.setIcon(img);
 
         title = new JLabel("New Employee Details");

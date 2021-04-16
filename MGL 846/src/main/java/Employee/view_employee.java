@@ -1,27 +1,25 @@
-package Employee;
+package main.java.Employee;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// THIS CODE IS SIMILAR TO VIEW_EMPLOYEE CODE
-
-class search_employee implements ActionListener{
+class view_employee implements ActionListener{
 
     JFrame frame;
     JTextField t;
     JLabel l1,l2;
     JButton b1,b2;
 
-    search_employee(){
-        frame=new JFrame("Search");
+    view_employee(){
+        frame=new JFrame("View");
         frame.setBackground(Color.green);
         frame.setLayout(null);
 
         l1=new JLabel();
         l1.setBounds(0,0,500,270);
         l1.setLayout(null);
-        ImageIcon img=new ImageIcon(ClassLoader.getSystemResource("icon/view.jpg"));
+        ImageIcon img=new ImageIcon(ClassLoader.getSystemResource("./main/java/icon/view.jpg"));
         l1.setIcon(img);
 
 
@@ -63,13 +61,12 @@ class search_employee implements ActionListener{
         }
         if(ae.getSource()==b1){
             frame.setVisible(false);
-            String eid = t.getText();
-            update_employee p=new update_employee(eid);
+            print_data p=new print_data(t.getText());
         }
 
     }
 
     public static void main(String[]ar){
-        search_employee v=new search_employee();
+        view_employee v=new view_employee();
     }
 }

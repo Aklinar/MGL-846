@@ -1,4 +1,4 @@
-package Employee;
+package main.java.Employee;
 
 import java.awt.*;
 import javax.swing.*;
@@ -19,7 +19,7 @@ class welcome_page implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		
-		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/welcome.jpg"));
+		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("./main/java/icon/welcome.jpg"));
 		Image i2 = i1.getImage().getScaledInstance(1050, 650, Image.SCALE_DEFAULT); // resize our image size.
 		ImageIcon i3 = new ImageIcon(i2);  // convert image into imageicon
 		

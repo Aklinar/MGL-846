@@ -1,4 +1,4 @@
-package Employee;
+package main.java.Employee;
 
 
 import java.sql.*;
@@ -20,7 +20,7 @@ class remove_employee implements ActionListener{
         l5=new JLabel();
         l5.setBounds(0,0,500,500);
         l5.setLayout(null);
-        ImageIcon img=new ImageIcon(ClassLoader.getSystemResource("icon/remove.jpg"));
+        ImageIcon img=new ImageIcon(ClassLoader.getSystemResource("./main/java/icon/remove.jpg"));
         l5.setIcon(img);
         frame.add(l5);
 
