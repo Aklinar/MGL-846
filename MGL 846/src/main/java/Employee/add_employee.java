@@ -12,10 +12,10 @@ public class add_employee implements ActionListener {
 	JFrame frame;
     JLabel box,title,label1,label2,label3,label4,label5,label6,label7,label8,label9,label10,label11,label12,label13;
     JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11;
-    JButton b1,b2;
+	JButton b1,b2;
 
-    
-    add_employee(){
+    //need to make it public
+    public add_employee(){
         frame = new JFrame("Add Employee");
         frame.setBackground(Color.white);
         frame.setLayout(null);
@@ -170,9 +170,11 @@ public class add_employee implements ActionListener {
         b1.addActionListener(this);
         b2.addActionListener(this);
         
+        //testing purpose
+        /*
         frame.setVisible(true);
         frame.setSize(900,700);
-        frame.setLocation(200,20);
+        frame.setLocation(200,20);*/
     }
 
 
@@ -180,7 +182,7 @@ public class add_employee implements ActionListener {
     
     @Override
 	public void actionPerformed(ActionEvent ae) {
-	
+
 		String a  = t1.getText();
         String bb = t2.getText();
         String c  = t3.getText();
@@ -210,15 +212,234 @@ public class add_employee implements ActionListener {
             frame.setVisible(false);
             new details_page();
         }
-		
-		
+	}
+    
+    public void actionPerformed(ActionEvent ae, boolean debugMode) {
+
+		String a  = t1.getText();
+        String bb = t2.getText();
+        String c  = t3.getText();
+        String d  = t4.getText();
+        String e  = t5.getText();
+        String ff = t6.getText();
+        String g  = t7.getText();
+        String h  = t8.getText();
+        String i  = t9.getText();
+        String j  = t10.getText();
+        String k  = t11.getText();
+        if(ae.getSource() == b1){
+            try{
+                conn cc = new conn();
+                String q = "insert into employee values('"+a+"','"+bb+"','"+c+"','"+d+"','"+e+"','"+ff+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"')";
+                cc.st.executeUpdate(q);
+                //debug mode for unit testing
+                //JOptionPane.showMessageDialog(null,"Details Successfully Inserted");
+                frame.setVisible(false); // close current frame.
+                new details_page(); // open details page
+            }catch(Exception ee){
+                System.out.println("The error is:"+ee);
+            }
+        }else if(ae.getSource() == b2){
+            frame.setVisible(false);
+            new details_page();
+        }else if(ae.getSource() == b2){
+            frame.setVisible(false);
+            new details_page();
+        }
 	}
 	
+    
+    public void display()
+    {
+        frame.setVisible(true);
+        frame.setSize(900,700);
+        frame.setLocation(200,20);
+    }
 	
 
 	public static void main(String[] args) {
-		new add_employee();
+		new add_employee().display();
 	}
 	 
+	//Added for testing purpose
+	public JTextField getT1() {
+		return t1;
+	}
+
+
+
+
+	public void setT1(JTextField t1) {
+		this.t1 = t1;
+	}
+
+
+
+
+	public JTextField getT2() {
+		return t2;
+	}
+
+
+
+
+	public void setT2(JTextField t2) {
+		this.t2 = t2;
+	}
+
+
+
+
+	public JTextField getT3() {
+		return t3;
+	}
+
+
+
+
+	public void setT3(JTextField t3) {
+		this.t3 = t3;
+	}
+
+
+
+
+	public JTextField getT4() {
+		return t4;
+	}
+
+
+
+
+	public void setT4(JTextField t4) {
+		this.t4 = t4;
+	}
+
+
+
+
+	public JTextField getT5() {
+		return t5;
+	}
+
+
+
+
+	public void setT5(JTextField t5) {
+		this.t5 = t5;
+	}
+
+
+
+
+	public JTextField getT6() {
+		return t6;
+	}
+
+
+
+
+	public void setT6(JTextField t6) {
+		this.t6 = t6;
+	}
+
+
+
+
+	public JTextField getT7() {
+		return t7;
+	}
+
+
+
+
+	public void setT7(JTextField t7) {
+		this.t7 = t7;
+	}
+
+
+
+
+	public JTextField getT8() {
+		return t8;
+	}
+
+
+
+
+	public void setT8(JTextField t8) {
+		this.t8 = t8;
+	}
+
+
+
+
+	public JTextField getT9() {
+		return t9;
+	}
+
+
+
+
+	public void setT9(JTextField t9) {
+		this.t9 = t9;
+	}
+
+
+
+
+	public JTextField getT10() {
+		return t10;
+	}
+
+
+
+
+	public void setT10(JTextField t10) {
+		this.t10 = t10;
+	}
+
+
+
+
+	public JTextField getT11() {
+		return t11;
+	}
+
+
+
+
+	public void setT11(JTextField t11) {
+		this.t11 = t11;
+	}
+
+
+
+
+	public JButton getB1() {
+		return b1;
+	}
+
+
+
+
+	public void setB1(JButton b1) {
+		this.b1 = b1;
+	}
+
+
+
+
+	public JButton getB2() {
+		return b2;
+	}
+
+
+
+
+	public void setB2(JButton b2) {
+		this.b2 = b2;
+	}
+	
 	
 }

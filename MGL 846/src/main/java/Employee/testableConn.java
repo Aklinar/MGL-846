@@ -22,6 +22,7 @@ public class testableConn {
 	//Create two interface
 	public Connection c;  // used to set up connection with mysql
 	public Statement st;  // used to execute all queries of mysql
+	public String exceptionResult;
 	
 	public testableConn(String url, String user, String psswrd) {
 		
@@ -30,8 +31,12 @@ public class testableConn {
 			c = DriverManager.getConnection(url,user,psswrd);
 			st = c.createStatement(); // helpful to execute query
 		} catch(Exception e) {
-			e.printStackTrace();
+			exceptionResult = e.getMessage();
 		}
+	}
+
+	public String getExceptionResult() {
+		return exceptionResult;
 	}
 	
 	
