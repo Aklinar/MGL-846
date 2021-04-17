@@ -108,10 +108,11 @@ public class remove_employee implements ActionListener{
         l4.setVisible(false);
         b1.setVisible(false);
         b2.setVisible(false);
-
+        //testing purpose
+        /*
         frame.setSize(500,500);
         frame.setLocation(500,250);  
-        frame.setVisible(true);
+        frame.setVisible(true);*/
     }
     
     public void actionPerformed(ActionEvent ae){
@@ -201,7 +202,9 @@ public class remove_employee implements ActionListener{
                     return true;
                 }
                 if(i==0)
-                    JOptionPane.showMessageDialog(null,"Id not found");
+                    //debug mode for unit testing
+                    //JOptionPane.showMessageDialog(null,"Id not found")
+                	;
             }catch(Exception ex){return false;}
         }
         
@@ -244,9 +247,18 @@ public class remove_employee implements ActionListener{
     
     
     public static void main(String[]ar){
-        new remove_employee();
+        new remove_employee().display();
     }
+    
 
+    public void display()
+    {
+        frame.setSize(500,500);
+        frame.setLocation(500,250);  
+        frame.setVisible(true);
+    }
+    
+	//Added for testing purpose
 	public JButton getB() {
 		return b;
 	}

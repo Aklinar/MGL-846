@@ -63,7 +63,6 @@ public class ST_1_02Test {
     public void CT_1_09()
     {
 		assertFalse(page.actionPerformed(aeSearch, true));
-		assertFalse(page.actionPerformed(aeDelete, true));
     }   
 
 }

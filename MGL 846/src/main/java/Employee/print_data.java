@@ -5,14 +5,16 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
 
-class print_data implements ActionListener{
+public class print_data implements ActionListener{
     JFrame f;
     JLabel id8,id,aid,id1,aid1,id2,aid2,id3,aid3,id4,aid4,id5,aid5,id6,aid6,id7,aid7,id9,id10,id11,id12,id13,id14,id15,id16,id17,lab;
     String emp_id,name,father,address,phone,email,education,post,age,dob,aadhar;
     JButton b1,b2;
     ImageIcon icon;
+	//Added for testing purpose
+    boolean flag = true;
 
-    print_data(String e_id){
+    public print_data(String e_id){
         try{
             conn co = new conn();
             String str = "select * from employee where emp_id = '"+e_id+"'";
@@ -37,14 +39,18 @@ class print_data implements ActionListener{
             }
         }catch(Exception e){
             e.printStackTrace();
+            //Added for testing purpose
+            flag = false;
         }
  
         f=new JFrame("Print Data");
+        //testing purpose
+        /*
         f.setVisible(true);
         f.setSize(595,642);
         f.setLocation(450,200);
         f.setBackground(Color.white);
-        f.setLayout(null);
+        f.setLayout(null);*/
 
 
         id9=new JLabel();
@@ -177,7 +183,56 @@ class print_data implements ActionListener{
     }
     
     public static void main(String[] args){
-        new print_data("Print Data");
+        new print_data("Print Data").display();
     }
+    
+
+    public void display()
+    {        
+    	f.setVisible(true);
+    	f.setSize(595,642);
+    	f.setLocation(450,200);
+    	f.setBackground(Color.white);
+    	f.setLayout(null);
+    }
+
+	public String getEmp_id() {
+		return emp_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getFather() {
+		return father;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getEducation() {
+		return education;
+	}
+
+	public String getPost() {
+		return post;
+	}
+
+	public boolean getFlag() {
+		return flag;
+	}
+
+	//Added for testing purpose
+    
 
 }

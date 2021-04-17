@@ -70,11 +70,12 @@ public class details_page implements ActionListener {
 		b4.addActionListener(this);  // perform action on button click.
 		frame.add(b4);
 		
-		
+		//testing purpose
+		/*
 		frame.setVisible(true);
 		frame.setSize(700,500);
 		frame.setLocation(450,200);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
 		
 		
 	}
@@ -107,6 +108,14 @@ public class details_page implements ActionListener {
 	
 	public static void main(String [] args) {
 		details_page det = new details_page();
+		det.display();
 	}
-	
+
+    public void display()
+    {
+		frame.setVisible(true);
+		frame.setSize(700,500);
+		frame.setLocation(450,200);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }

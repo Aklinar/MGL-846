@@ -50,9 +50,11 @@ class search_employee implements ActionListener{
         b2.addActionListener(this);
         l1.add(b2);
 
+		//testing purpose
+		/*
         frame.setSize(500,270);
         frame.setLocation(450,250);
-        frame.setVisible(true);
+        frame.setVisible(true);*/
     }
     
     public void actionPerformed(ActionEvent ae){
@@ -71,5 +73,13 @@ class search_employee implements ActionListener{
 
     public static void main(String[]ar){
         search_employee v=new search_employee();
+        v.display();
+    }
+
+    public void display()
+    {
+        frame.setSize(500,270);
+        frame.setLocation(450,250);
+        frame.setVisible(true);
     }
 }
