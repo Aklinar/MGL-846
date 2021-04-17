@@ -5,7 +5,7 @@ import java.sql.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-class update_employee  implements ActionListener{
+public class update_employee  implements ActionListener{
 
     JFrame f;
     JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,lab,lab1;
@@ -13,7 +13,7 @@ class update_employee  implements ActionListener{
     JButton b,b1,b2,b3; 
     String id_emp;
 
-    update_employee(String idaa){
+   public update_employee(String idaa){
         
         f=new JFrame("update Employee details");
         f.setVisible(true);
@@ -163,9 +163,11 @@ class update_employee  implements ActionListener{
             
             new search_employee();
         }catch(Exception ex){}
+        //testing purpose
+        /*
         f.setVisible(true);
         f.setSize(900,500);
-        f.setLocation(400,100);
+        f.setLocation(400,100);*/
     }
 
     public void actionPerformed(ActionEvent ae){
@@ -187,9 +189,217 @@ class update_employee  implements ActionListener{
         }
     }
 
-    
-    public static void main(String[] arg){
-        new update_employee("");
+
+    public void actionPerformed(ActionEvent ae, boolean debugMode){
+        if(ae.getSource()==b && i==1){
+            try{
+                conn con = new conn();
+                String str = "update employee set name='"+t1.getText()+"',fname='"+t2.getText()+"',age='"+age+"',dob='"+dat+"',address='"+t3.getText()+"',phone='"+t4.getText()+"',email='"+t5.getText()+"',education='"+t6.getText()+"',post='"+t7.getText()+"',aadhar='"+t8.getText()+"',emp_id='"+t9.getText()+"' where emp_id='"+id_emp+"'";
+                con.st.executeUpdate(str);
+                //debug mode for unit testing
+                //JOptionPane.showMessageDialog(null,"successfully updated");
+                f.setVisible(false);
+                new search_employee();
+            }catch(Exception e){
+                System.out.println("The error is:"+e);
+            }
+        }
+        if(ae.getSource()==b1){
+            f.setVisible(false);
+            details_page d=new details_page();
+        }
     }
     
+    public void display()
+    {
+        f.setVisible(true);
+        f.setSize(900,500);
+        f.setLocation(400,100);
+    }
+    
+    public static void main(String[] arg){
+        new update_employee("").display();
+    }
+	 
+	//Added for testing purpose
+	public JTextField getT1() {
+		return t1;
+	}
+
+
+
+
+	public void setT1(JTextField t1) {
+		this.t1 = t1;
+	}
+
+
+
+
+	public JTextField getT2() {
+		return t2;
+	}
+
+
+
+
+	public void setT2(JTextField t2) {
+		this.t2 = t2;
+	}
+
+
+
+
+	public JTextField getT3() {
+		return t3;
+	}
+
+
+
+
+	public void setT3(JTextField t3) {
+		this.t3 = t3;
+	}
+
+
+
+
+	public JTextField getT4() {
+		return t4;
+	}
+
+
+
+
+	public void setT4(JTextField t4) {
+		this.t4 = t4;
+	}
+
+
+
+
+	public JTextField getT5() {
+		return t5;
+	}
+
+
+
+
+	public void setT5(JTextField t5) {
+		this.t5 = t5;
+	}
+
+
+
+
+	public JTextField getT6() {
+		return t6;
+	}
+
+
+
+
+	public void setT6(JTextField t6) {
+		this.t6 = t6;
+	}
+
+
+
+
+	public JTextField getT7() {
+		return t7;
+	}
+
+
+
+
+	public void setT7(JTextField t7) {
+		this.t7 = t7;
+	}
+
+
+
+
+	public JTextField getT8() {
+		return t8;
+	}
+
+
+
+
+	public void setT8(JTextField t8) {
+		this.t8 = t8;
+	}
+
+
+
+
+	public JTextField getT9() {
+		return t9;
+	}
+
+
+
+
+	public void setT9(JTextField t9) {
+		this.t9 = t9;
+	}
+
+
+
+
+	public JTextField getT10() {
+		return t10;
+	}
+
+
+
+
+	public void setT10(JTextField t10) {
+		this.t10 = t10;
+	}
+
+
+
+
+	public JTextField getT11() {
+		return t11;
+	}
+
+
+
+
+	public void setT11(JTextField t11) {
+		this.t11 = t11;
+	}
+
+
+
+
+	public JButton getB() {
+		return b;
+	}
+
+
+
+
+	public void setB(JButton b) {
+		this.b = b;
+	}
+
+
+
+
+	public JButton getB2() {
+		return b2;
+	}
+
+
+
+
+	public void setB2(JButton b2) {
+		this.b2 = b2;
+	}
+	
+	
 }

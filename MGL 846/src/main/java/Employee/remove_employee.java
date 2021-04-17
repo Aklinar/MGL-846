@@ -6,13 +6,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class remove_employee implements ActionListener{
+public class remove_employee implements ActionListener{
     JFrame frame;
     JTextField t;
     JLabel l1,l2,l3,l4,l5,l6,l7,l8;
     JButton b,b1,b2,b3;
 
-    remove_employee(){
+    public remove_employee(){
         frame=new JFrame("Remove Employee");
         frame.setBackground(Color.green);   
         frame.setLayout(null);
@@ -174,9 +174,89 @@ class remove_employee implements ActionListener{
         }
     }
 
+
+    public boolean actionPerformed(ActionEvent ae, boolean debugMode){
+
+        if(ae.getSource()==b){
+            try{
+                conn con = new conn();
+                String str = "select name,phone,email from employee where emp_id ='"+t.getText()+"' ";
+                ResultSet rs = con.st.executeQuery(str);
+
+                int i=0;
+                if(rs.next()){
+                    String name  = rs.getString(1); // col no. 1
+                    String mob   = rs.getString(2); // col no. 2
+                    String email = rs.getString(3); // col no. 3
+
+                    l2.setVisible(true);
+                    l3.setVisible(true);
+                    l4.setVisible(true);
+                    b1.setVisible(true);
+                    b2.setVisible(true);    
+                    i=1;
+                    l6.setText(name);
+                    l7.setText(mob);
+                    l8.setText(email);
+                    return true;
+                }
+                if(i==0)
+                    JOptionPane.showMessageDialog(null,"Id not found");
+            }catch(Exception ex){return false;}
+        }
+        
+        // Perform delete operation after confirming id matched
+        if(ae.getSource()==b1){
+            try{
+                conn con = new conn();
+                String str = "delete from employee where emp_id = '"+t.getText()+"'";
+                con.st.executeUpdate(str);
+                //debug mode for unit testing
+                //JOptionPane.showMessageDialog(null,"deleted successfully");
+                l2.setVisible(false);
+                l3.setVisible(false);
+                l4.setVisible(false);
+                l6.setVisible(false);
+                l7.setVisible(false);
+                l8.setVisible(false);
+                b1.setVisible(false);
+                b2.setVisible(false);
+                
+                return true;
+
+            }catch(Exception ex){
+                //JOptionPane.showMessageDialog(null,"Exception occured while deleting record "+ex);
+                return false;
+            }
+        }
+        // When cancel button pressed
+        if(ae.getSource()==b2){
+            frame.setVisible(false);
+            details_page d=new details_page();
+        }
+        if(ae.getSource()==b3){
+            frame.setVisible(false);
+            details_page d=new details_page();
+        }
+        return false;
+    }
+
     
     
     public static void main(String[]ar){
         new remove_employee();
     }
+
+	public JButton getB() {
+		return b;
+	}
+
+	public JButton getB1() {
+		return b1;
+	}
+
+	public JTextField getT() {
+		return t;
+	}
+    
 }

@@ -36,7 +36,7 @@ public class ST_0_01Test {
     public void CT_0_03() throws Exception
     {
     	testableConn con = new testableConn("jdbc:mysql://localhost:3306/ets?useSSL=false&serverTimezone=UTC","error","etsets");	
-    	assertEquals("Public Key Retrieval is not allowed", con.getExceptionResult());
+    	assertEquals("Access denied for user 'error'@'localhost' (using password: YES)", con.getExceptionResult());
     }   
 
     @Test
