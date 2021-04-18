@@ -88,7 +88,7 @@ public class details_page implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == b1) {
 			frame.setVisible(false);
-			new add_employee();
+			new add_employee().display();
 		}
 		else if(e.getSource() == b2) {
 			frame.setVisible(false);
