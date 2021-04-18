@@ -96,11 +96,11 @@ public class details_page implements ActionListener {
 		}
 		else if(e.getSource() == b3) {
 			frame.setVisible(false);
-			new remove_employee();
+			new remove_employee().display();
 		}
 		else if(e.getSource() == b4) {
 			frame.setVisible(false);
-			new search_employee();
+			new search_employee().display();
 		}
 		
 	}

@@ -201,16 +201,16 @@ public class add_employee implements ActionListener {
                 cc.st.executeUpdate(q);
                 JOptionPane.showMessageDialog(null,"Details Successfully Inserted");
                 frame.setVisible(false); // close current frame.
-                new details_page(); // open details page
+                new details_page().display(); // open details page
             }catch(Exception ee){
                 System.out.println("The error is:"+ee);
             }
         }else if(ae.getSource() == b2){
             frame.setVisible(false);
-            new details_page();
+            new details_page().display();
         }else if(ae.getSource() == b2){
             frame.setVisible(false);
-            new details_page();
+            new details_page().display();
         }
 	}
     

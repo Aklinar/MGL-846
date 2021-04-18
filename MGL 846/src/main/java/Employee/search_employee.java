@@ -6,14 +6,14 @@ import javax.swing.*;
 
 // THIS CODE IS SIMILAR TO VIEW_EMPLOYEE CODE
 
-class search_employee implements ActionListener{
+public class search_employee implements ActionListener{
 
     JFrame frame;
     JTextField t;
     JLabel l1,l2;
     JButton b1,b2;
 
-    search_employee(){
+  public  search_employee(){
         frame=new JFrame("Search");
         frame.setBackground(Color.green);
         frame.setLayout(null);
@@ -58,6 +58,23 @@ class search_employee implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent ae){
+
+        if(ae.getSource()==b2){
+            frame.setVisible(false);
+            details_page d=new details_page();
+            d.display();
+        }
+        if(ae.getSource()==b1){
+            frame.setVisible(false);
+            String eid = t.getText();
+            update_employee p=new update_employee(eid);
+            p.display();
+        }
+
+    }
+    
+
+    public void actionPerformed(ActionEvent ae, boolean debugMode){
 
         if(ae.getSource()==b2){
             frame.setVisible(false);

@@ -175,10 +175,11 @@ public class print_data implements ActionListener{
             JOptionPane.showMessageDialog(null,"printed successfully");
             f.setVisible(false);
             details_page d=new details_page();
+            d.display();
         }
         if(ae.getSource()==b2){
             f.setVisible(false);
-            new view_employee();
+            new view_employee().display();
         }
     }
     
