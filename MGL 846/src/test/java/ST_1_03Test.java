@@ -1,5 +1,3 @@
-package test.java;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -15,8 +13,8 @@ import org.junit.BeforeClass;
 //import org.junit.Before;
 import org.junit.Test;
 
-import main.java.Employee.update_employee;
-import main.java.Employee.testableConn;
+import Employee.update_employee;
+import Employee.testableConn;
 
 public class ST_1_03Test {
 	
@@ -51,7 +49,7 @@ public class ST_1_03Test {
 		{
 			page.actionPerformed(ae, true);
 		} finally {
-			//Reste à vérifier côté DB si l'enregistrement a été save
+			//Reste ï¿½ vï¿½rifier cï¿½tï¿½ DB si l'enregistrement a ï¿½tï¿½ save
 	    	assertTrue(test);
 		}
     }    

@@ -1,4 +1,3 @@
-package test.java;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -19,10 +18,10 @@ import org.junit.BeforeClass;
 //import org.junit.Before;
 import org.junit.Test;
 
-import main.java.Employee.add_employee;
-import main.java.Employee.print_data;
-import main.java.Employee.remove_employee;
-import main.java.Employee.testableConn;
+import Employee.add_employee;
+import Employee.print_data;
+import Employee.remove_employee;
+import Employee.testableConn;
 
 public class ST_1_04Test {
 	

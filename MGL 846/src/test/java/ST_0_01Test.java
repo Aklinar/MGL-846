@@ -1,5 +1,3 @@
-package test.java;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -14,7 +12,7 @@ import java.util.ArrayList;
 //import org.junit.Before;
 import org.junit.Test;
 
-import main.java.Employee.testableConn;
+import Employee.testableConn;
 
 public class ST_0_01Test {
 	
