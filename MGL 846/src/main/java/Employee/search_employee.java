@@ -82,4 +82,25 @@ class search_employee implements ActionListener{
         frame.setLocation(450,250);
         frame.setVisible(true);
     }
+
+    //Added for testing purpose
+	public JTextField getT() {
+		return t;
+	}
+
+	public void setT(JTextField t) {
+		this.t = t;
+	}
+
+	public JButton getB1() {
+		return b1;
+	}
+
+	public JButton getB2() {
+		return b2;
+	}
+    
+
+    
+    
 }

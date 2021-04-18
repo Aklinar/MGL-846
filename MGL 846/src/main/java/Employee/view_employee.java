@@ -48,9 +48,11 @@ public class view_employee implements ActionListener{
         b2.addActionListener(this);
         l1.add(b2);
 
+    	//testing purpose
+        /*
         frame.setSize(500,270);
         frame.setLocation(450,250);
-        frame.setVisible(true);
+        frame.setVisible(true);*/
     }
     
     public void actionPerformed(ActionEvent ae){
@@ -58,15 +60,25 @@ public class view_employee implements ActionListener{
         if(ae.getSource()==b2){
             frame.setVisible(false);
             details_page d=new details_page();
+            d.display();
         }
         if(ae.getSource()==b1){
             frame.setVisible(false);
             print_data p=new print_data(t.getText());
+            p.display();
         }
 
     }
 
     public static void main(String[]ar){
         view_employee v=new view_employee();
+        v.display();
+    }
+    
+    public void display()
+    {
+        frame.setSize(500,270);
+        frame.setLocation(450,250);
+        frame.setVisible(true);
     }
 }
