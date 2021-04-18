@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 import java.sql.SQLNonTransientConnectionException;
 
-import Employee.*;
+import main.java.Employee.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;

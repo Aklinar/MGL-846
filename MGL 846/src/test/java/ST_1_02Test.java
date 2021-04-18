@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 import java.sql.SQLNonTransientConnectionException;
 
-import Employee.conn;
+import main.java.Employee.conn;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -16,9 +16,9 @@ import org.junit.BeforeClass;
 //import org.junit.Before;
 import org.junit.Test;
 
-import Employee.add_employee;
-import Employee.remove_employee;
-import Employee.testableConn;
+import main.java.Employee.add_employee;
+import main.java.Employee.remove_employee;
+import main.java.Employee.testableConn;
 
 public class ST_1_02Test {
 

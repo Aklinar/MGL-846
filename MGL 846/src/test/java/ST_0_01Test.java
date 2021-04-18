@@ -12,7 +12,7 @@ import java.util.ArrayList;
 //import org.junit.Before;
 import org.junit.Test;
 
-import Employee.testableConn;
+import main.java.Employee.testableConn;
 
 public class ST_0_01Test {
 	

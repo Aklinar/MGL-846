@@ -3,7 +3,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLNonTransientConnectionException;
 
-import Employee.conn;
+import main.java.Employee.conn;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
@@ -13,8 +13,8 @@ import org.junit.BeforeClass;
 //import org.junit.Before;
 import org.junit.Test;
 
-import Employee.update_employee;
-import Employee.testableConn;
+import main.java.Employee.update_employee;
+import main.java.Employee.testableConn;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
