@@ -1,9 +1,12 @@
-import main.java.Employee.conn;
+package test.java;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import main.java.Employee.conn;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -85,10 +88,6 @@ public class ST_0_02Test {
             throwables.printStackTrace();
         }
     }
-
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
 
     @Test(expected = SQLSyntaxErrorException.class)
     public void CT_0_06() throws Exception {        //  Fabriquer une requête non valide dans la
