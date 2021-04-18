@@ -92,7 +92,7 @@ public class details_page implements ActionListener {
 		}
 		else if(e.getSource() == b2) {
 			frame.setVisible(false);
-			new view_employee();
+			new view_employee().display();
 		}
 		else if(e.getSource() == b3) {
 			frame.setVisible(false);
