@@ -1,3 +1,5 @@
+package test.java;
+
 import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;

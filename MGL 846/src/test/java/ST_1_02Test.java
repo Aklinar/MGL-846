@@ -48,11 +48,6 @@ public class ST_1_02Test {
 
 		page.getT().setText("9999");
 
-		add_employee pagetemp = new add_employee();
-		ActionEvent aetemp = new ActionEvent(pagetemp.getB1(), 1001, "Submit");
-
-
-
 		String add_employee_query = "insert into employee values('"
 				+ name + "','"
 				+ fathersName + "','"
@@ -72,7 +67,6 @@ public class ST_1_02Test {
 			throwables.printStackTrace();
 		}
 
-		pagetemp.actionPerformed(aetemp, true);
 	}
 
 	@After

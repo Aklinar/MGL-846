@@ -1,3 +1,4 @@
+package test.java;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -43,9 +44,6 @@ public class ST_1_04Test {
 	@BeforeClass
 	public static void setUp()
 	{
-		add_employee pagetemp = new add_employee();
-		ActionEvent aetemp = new ActionEvent(pagetemp.getB1(), 1001, "Submit");
-
 		String add_employee_query = "insert into employee values('"
 				+ name + "','"
 				+ fathersName + "','"
@@ -64,9 +62,6 @@ public class ST_1_04Test {
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();
 		}
-
-
-		pagetemp.actionPerformed(aetemp, true);
 	}
 
     @Test
@@ -84,28 +79,17 @@ public class ST_1_04Test {
 		assertEquals("mercenary", page.getPost());
     }
 
-
-	@After
-	public void tearDown()
-	{
-		if (switcher) {
-		remove_employee pagetemp = new remove_employee();
-		pagetemp.getT().setText("9999");
-		ActionEvent aetemp = new ActionEvent(pagetemp.getB1(), 1001, "Submit");
-
-		pagetemp.actionPerformed(aetemp, true);
-		}
-		switcher = false;
-	}
-
 	@After
 	public void deleteEmployee() {
-		String deleteQuery = "DELETE FROM employee WHERE emp_id = '" + employeeId + "'";
-		try {
-			mySqlConn.st.execute(deleteQuery);
-		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+		if (switcher) {
+			String deleteQuery = "DELETE FROM employee WHERE emp_id = '" + employeeId + "'";
+			try {
+				mySqlConn.st.execute(deleteQuery);
+			} catch (SQLException throwables) {
+				throwables.printStackTrace();
+			}
 		}
+		switcher = false;
 	}
 
     @Test
