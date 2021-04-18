@@ -13,7 +13,7 @@ public class details_page implements ActionListener {
 	JButton b1, b2, b3, b4;
 	
 	
-	details_page(){
+	public details_page(){
 	
 		frame = new JFrame("Employee Dashboard");
 		frame.setBackground(Color.WHITE);
@@ -105,6 +105,28 @@ public class details_page implements ActionListener {
 		
 	}
 	
+
+	public Object actionPerformed(ActionEvent e, boolean debugMode) {
+		if(e.getSource() == b1) {
+			frame.setVisible(false);
+			return new add_employee();
+		}
+		else if(e.getSource() == b2) {
+			frame.setVisible(false);
+			return new view_employee();
+		}
+		else if(e.getSource() == b3) {
+			frame.setVisible(false);
+			return new remove_employee();
+		}
+		else if(e.getSource() == b4) {
+			frame.setVisible(false);
+			return new search_employee();
+		}
+		return null;
+		
+	}
+	
 	
 	public static void main(String [] args) {
 		details_page det = new details_page();
@@ -118,4 +140,42 @@ public class details_page implements ActionListener {
 		frame.setLocation(450,200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+
+    //Added for testing purpose
+
+
+
+	public JButton getB1() {
+		return b1;
+	}
+
+
+
+
+
+	public JButton getB2() {
+		return b2;
+	}
+
+
+
+
+
+	public JButton getB3() {
+		return b3;
+	}
+
+
+
+
+
+	public JButton getB4() {
+		return b4;
+	}
+    
+
+    
+    
+    
 }
