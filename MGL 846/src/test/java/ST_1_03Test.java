@@ -1,11 +1,15 @@
 package test.java;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.awt.event.ActionEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLNonTransientConnectionException;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
@@ -16,6 +20,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import main.java.Employee.update_employee;
+import main.java.Employee.conn;
 import main.java.Employee.testableConn;
 
 public class ST_1_03Test {
@@ -23,36 +28,111 @@ public class ST_1_03Test {
 	public static update_employee page;
 	public static ActionEvent ae;
 	
+	public static conn mySqlConn = new conn();
+	public static String name = "John";
+	public static String fathersName = "Wick";
+	public static String age = "30";
+	public static String birthDate = "1995/03/24";
+	public static String address = "32 rue de la grange";
+	public static String phone = "0666007666";
+	public static String email = "johnattan@mail.com";
+	public static String education = "graduate";
+	public static String jobPost = "mercenary";
+	public static String aadharNo = "666666666";
+	public static String employeeId = "9999";
+	
 	@BeforeClass
 	public static void setUp()
 	{
-		page = new update_employee("1000");
+		
+
+		String add_employee_query = "insert into employee values('"
+				+ name + "','"
+				+ fathersName + "','"
+				+ age + "','"
+				+ birthDate + "','"
+				+ address + "','"
+				+ phone + "','"
+				+ email + "','"
+				+ education + "','"
+				+ jobPost + "','"
+				+ aadharNo + "','"
+				+ employeeId + "')";
+
+		try {
+			mySqlConn.st.execute(add_employee_query);
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
+		}
+		page = new update_employee("9999");
 		ae = new ActionEvent(page.getB(), 1001, "Submit");
 		
-		page.getT1().setText("John");
-		page.getT2().setText("Wick");
+		page.getT1().setText("John2");
+		page.getT2().setText("Wick2");
 		//page.getT3().setText("30");
 		//page.getT4().setText("1995/03/24");
-		page.getT3().setText("32 rue de la grange");
-		page.getT4().setText("0666007666");
-		page.getT5().setText("johnattan@mail.com");
-		page.getT6().setText("graduate");
-		page.getT7().setText("mercenary");
-		page.getT8().setText("666666666");
-		page.getT9().setText("1002");
+		page.getT3().setText("32 rue de la grange2");
+		page.getT4().setText("06660076662");
+		page.getT5().setText("johnattan@mail.com2");
+		page.getT6().setText("graduate2");
+		page.getT7().setText("mercenary2");
+		page.getT8().setText("6666666662");
+		page.getT9().setText("99992");
+		
 	}
+	
+	@AfterClass
+	public static void tearDown()
+	{
+		String deleteQuery = "DELETE FROM employee WHERE emp_id = '9999'";
+		try {
+			mySqlConn.st.execute(deleteQuery);
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
+		}
+		
+		String deleteQuery2 = "DELETE FROM employee WHERE emp_id = '99992'";
+		try {
+			mySqlConn.st.execute(deleteQuery2);
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
+		}
+		
+		String deleteQuery3 = "DELETE FROM employee WHERE emp_id = ''";
+		try {
+			mySqlConn.st.execute(deleteQuery3);
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
+		}
+	}
+	
 	
     @Test
     public void CT_1_01_2() 
     {
-    	boolean test = true;
+    	page.actionPerformed(ae, true);
     	
-		try
-		{
-			page.actionPerformed(ae, true);
-		} finally {
-			//Reste à vérifier côté DB si l'enregistrement a été save
-	    	assertTrue(test);
+		String select_employee_query = "select * from employee where emp_id = '" + employeeId + "2'";
+		ResultSet rs = null;
+		boolean is_found = false;
+		try {
+			rs = mySqlConn.st.executeQuery(select_employee_query);
+			while (rs.next()) {
+				is_found = true;
+				assertEquals(name + "2", rs.getString("name"));
+				assertEquals(fathersName + "2", rs.getString("fname"));
+//				assertEquals(rs.getString("age"), age);
+//				assertEquals(rs.getString("dob"), birthDate);
+				assertEquals(address + "2", rs.getString("address"));
+				assertEquals(phone + "2",rs.getString("phone"));
+				assertEquals(email + "2", rs.getString("email"));
+				assertEquals(education + "2", rs.getString("education"));
+				assertEquals(jobPost + "2", rs.getString("post"));
+				assertEquals(aadharNo + "2", rs.getString("aadhar"));
+			}
+			assertEquals(true, is_found);
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
 		}
     }    
 
