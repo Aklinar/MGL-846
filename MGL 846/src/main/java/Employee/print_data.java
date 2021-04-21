@@ -46,11 +46,11 @@ public class print_data implements ActionListener{
         f=new JFrame("Print Data");
         //testing purpose
         /*
-        f.setVisible(true);
+        f.setVisible(true);*/
         f.setSize(595,642);
         f.setLocation(450,200);
         f.setBackground(Color.white);
-        f.setLayout(null);*/
+        f.setLayout(null);
 
 
         id9=new JLabel();
@@ -191,10 +191,6 @@ public class print_data implements ActionListener{
     public void display()
     {        
     	f.setVisible(true);
-    	f.setSize(595,642);
-    	f.setLocation(450,200);
-    	f.setBackground(Color.white);
-    	f.setLayout(null);
     }
 
 	public String getEmp_id() {
