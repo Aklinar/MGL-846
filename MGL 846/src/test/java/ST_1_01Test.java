@@ -40,7 +40,7 @@ public class ST_1_01Test {
 	public static String education = "graduate";
 	public static String jobPost = "mercenary";
 	public static String aadharNo = "666666666";
-	public static String employeeId = "1002";
+	public static String employeeId = "9999";
 	
 	@BeforeClass
 	public static void setUp()
@@ -58,7 +58,7 @@ public class ST_1_01Test {
 		page.getT8().setText("graduate");
 		page.getT9().setText("mercenary");
 		page.getT10().setText("666666666");
-		page.getT11().setText("1002");
+		page.getT11().setText("9999");
 	}
 	
 	@After
