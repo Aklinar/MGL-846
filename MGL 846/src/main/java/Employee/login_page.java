@@ -96,7 +96,7 @@ class login_page implements ActionListener {
 			ResultSet rs = c1.st.executeQuery(q); // used to retrieve data from database using conn.s.executeQuery()
 			
 			if(rs.next()) {  //used to match username and password
-				new details_page().frame.setVisible(true); // open details page and make visible also. 
+				new details_page().display(); // open details page and make visible also. 
 				frame.setVisible(false); // close login page
 			}else {
 				JOptionPane.showMessageDialog(null, "Invalid login"); // when not matched.

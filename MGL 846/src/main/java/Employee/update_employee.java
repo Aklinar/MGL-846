@@ -178,7 +178,7 @@ public class update_employee  implements ActionListener{
                 con.st.executeUpdate(str);
                 JOptionPane.showMessageDialog(null,"successfully updated");
                 f.setVisible(false);
-                new search_employee();
+                new search_employee().display();
             }catch(Exception e){
                 System.out.println("The error is:"+e);
             }
@@ -186,6 +186,7 @@ public class update_employee  implements ActionListener{
         if(ae.getSource()==b1){
             f.setVisible(false);
             details_page d=new details_page();
+            d.display();
         }
     }
 

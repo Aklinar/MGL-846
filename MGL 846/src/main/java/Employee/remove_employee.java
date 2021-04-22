@@ -168,10 +168,12 @@ public class remove_employee implements ActionListener{
         if(ae.getSource()==b2){
             frame.setVisible(false);
             details_page d=new details_page();
+            d.display();
         }
         if(ae.getSource()==b3){
             frame.setVisible(false);
             details_page d=new details_page();
+            d.display();
         }
     }
 

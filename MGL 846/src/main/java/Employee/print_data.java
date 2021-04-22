@@ -46,11 +46,11 @@ public class print_data implements ActionListener{
         f=new JFrame("Print Data");
         //testing purpose
         /*
-        f.setVisible(true);
+        f.setVisible(true);*/
         f.setSize(595,642);
         f.setLocation(450,200);
         f.setBackground(Color.white);
-        f.setLayout(null);*/
+        f.setLayout(null);
 
 
         id9=new JLabel();
@@ -175,10 +175,11 @@ public class print_data implements ActionListener{
             JOptionPane.showMessageDialog(null,"printed successfully");
             f.setVisible(false);
             details_page d=new details_page();
+            d.display();
         }
         if(ae.getSource()==b2){
             f.setVisible(false);
-            new view_employee();
+            new view_employee().display();
         }
     }
     
@@ -190,10 +191,6 @@ public class print_data implements ActionListener{
     public void display()
     {        
     	f.setVisible(true);
-    	f.setSize(595,642);
-    	f.setLocation(450,200);
-    	f.setBackground(Color.white);
-    	f.setLayout(null);
     }
 
 	public String getEmp_id() {
